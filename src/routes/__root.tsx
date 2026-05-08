@@ -75,11 +75,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "GWT — Ihr Partner für wassertechnische Anlagen" },
       { name: "description", content: "Wassertechnik, Heizung, Schwimmbad und Therme — Planung, Errichtung und Service in Österreich und der Schweiz." },
       { name: "author", content: "GWT Group" },
-      { property: "og:title", content: "GWT — Wassertechnik & Heizung" },
-      { property: "og:description", content: "Komplettlösungen rund um Wasser und Wärme — von der Planung bis zum Service." },
+      { property: "og:title", content: "GWT — Ihr Partner für wassertechnische Anlagen" },
+      { property: "og:description", content: "Wassertechnik, Heizung, Schwimmbad und Therme — Planung, Errichtung und Service in Österreich und der Schweiz." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "GWT — Ihr Partner für wassertechnische Anlagen" },
+      { name: "twitter:description", content: "Wassertechnik, Heizung, Schwimmbad und Therme — Planung, Errichtung und Service in Österreich und der Schweiz." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab27a1ea-fea0-46e8-9d58-9518323addd8/id-preview-cffea5f9--aa9c0354-ef8f-446d-a624-ffe048fea44d.lovable.app-1778251224954.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab27a1ea-fea0-46e8-9d58-9518323addd8/id-preview-cffea5f9--aa9c0354-ef8f-446d-a624-ffe048fea44d.lovable.app-1778251224954.png" },
     ],
     links: [
       {
