@@ -1,6 +1,7 @@
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { ArrowUpRight, List, X } from "@phosphor-icons/react";
 import { useState } from "react";
+import logoUrl from "@/assets/gwt-logo.png";
 
 const NAV = [
   { to: "/", label: "Übersicht" },
@@ -17,11 +18,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 pt-5">
         <div className="glass rounded-full flex items-center justify-between pl-6 pr-2 py-2">
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <span className="grid place-items-center h-8 w-8 rounded-full bg-ink text-paper font-display text-[13px] font-semibold tracking-tight">G</span>
-            <span className="font-display font-semibold tracking-tight text-ink text-[15px]">
-              gwt<span className="text-surf">.group</span>
-            </span>
+          <Link to="/" className="flex items-center gap-2.5 group" aria-label="GWT — Startseite">
+            <img src={logoUrl} alt="GWT" className="h-7 md:h-8 w-auto" />
           </Link>
           <nav className="hidden md:flex items-center gap-1 text-[13px]">
             {NAV.map((n) => {
@@ -82,6 +80,7 @@ export function SiteFooter() {
     <footer className="mt-32 border-t border-ink/10">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-5">
+          <img src={logoUrl} alt="GWT" className="h-10 w-auto mb-6" />
           <div className="font-display text-3xl tracking-tighter text-ink leading-none">
             Wasser braucht<br />
             <span className="text-surf italic">Handwerk.</span>
