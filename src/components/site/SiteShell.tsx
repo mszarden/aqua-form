@@ -28,11 +28,16 @@ export function SiteHeader() {
                 <Link
                   key={n.to}
                   to={n.to}
-                  className={`px-3.5 py-2 rounded-full transition-colors ${
-                    active ? "bg-ink text-paper" : "text-ink/70 hover:text-ink hover:bg-ink/5"
+                  className={`relative px-3.5 py-2 transition-colors ${
+                    active ? "text-ink" : "text-ink/65 hover:text-ink"
                   }`}
                 >
                   {n.label}
+                  <span
+                    className={`pointer-events-none absolute left-3.5 right-3.5 -bottom-0.5 h-[2px] bg-ink rounded-full origin-left transition-transform duration-300 ${
+                      active ? "scale-x-100" : "scale-x-0"
+                    }`}
+                  />
                 </Link>
               );
             })}
