@@ -66,6 +66,7 @@ export function SiteHeader() {
             </button>
           </div>
         </div>
+        </div>
         {open && (
           <div className="md:hidden mt-2 glass rounded-3xl p-4 flex flex-col gap-1">
             {NAV.map((n) => (
