@@ -41,6 +41,7 @@
   --color-mist: var(--mist);
   --color-surf: var(--surf);
   --color-paper: var(--paper);
+  --color-noir: var(--noir);
 }
 
 :root {
@@ -51,6 +52,7 @@
   --mist: oklch(0.95 0.025 240);        /* #dbebf8 */
   --surf: oklch(0.70 0.05 230);         /* #7ca4bd */
   --paper: oklch(0.985 0.005 240);
+  --noir: oklch(0.18 0.012 245);          /* deep near‑black with brand tint */
 
   --background: var(--paper);
   --foreground: oklch(0.18 0.04 245);
