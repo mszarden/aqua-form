@@ -248,8 +248,9 @@ function Disciplines() {
 function Numbers() {
   return (
     <section className="mx-auto max-w-[1400px] px-5 md:px-10 mt-32 md:mt-44">
-      <div className="rounded-[2.5rem] bg-white border border-ink/8 ink-shadow p-8 md:p-14 grid md:grid-cols-12 gap-10 items-stretch">
-        <div className="md:col-span-4 flex flex-col">
+      <div className="rounded-[2.5rem] bg-white border border-ink/8 ink-shadow p-8 md:p-14 grid md:grid-cols-12 gap-10">
+        {/* Row 1: intro + stats */}
+        <div className="md:col-span-4">
           <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/40 mb-4">(03) Bilanz</div>
           <h2 className="font-display text-4xl md:text-5xl tracking-tighter text-ink leading-[1.05]">
             Keine runden Zahlen.<br />
@@ -259,16 +260,8 @@ function Numbers() {
             Statt geglätteter Marketingmetriken zeigen wir, was wirklich
             gemessen wurde — Stand Q1 2026.
           </p>
-          <div className="mt-8 rounded-2xl overflow-hidden aspect-[4/3] flex-1 min-h-[180px]">
-            <img
-              src={heatImg}
-              alt="Heizungstechnik Detail"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
         </div>
-        <div className="md:col-span-8 grid grid-cols-2 gap-px bg-ink/10 rounded-[2rem] overflow-hidden border border-ink/10 self-start">
+        <div className="md:col-span-8 grid grid-cols-2 gap-px bg-ink/10 rounded-[2rem] overflow-hidden border border-ink/10">
           {[
             ["47 281 m³", "Rohrleitung verlegt"],
             ["1 247", "Anlagen unter Wartung"],
@@ -280,12 +273,21 @@ function Numbers() {
               <div className="mt-2 text-ink/55 text-[13px]">{l}</div>
             </div>
           ))}
-          <div className="bg-ink text-paper p-7 md:p-10 col-span-2">
-            <div className="font-mono text-[11px] uppercase tracking-widest text-paper/50">Qualitätsindex</div>
-            <div className="mt-3 flex items-baseline gap-3">
-              <div className="font-display text-5xl tracking-tighter">9.6<span className="text-paper/40 text-2xl">/10</span></div>
-              <div className="text-paper/60 text-sm">Kundenbewertungen 2025</div>
-            </div>
+        </div>
+        {/* Row 2: photo + Qualitätsindex aligned */}
+        <div className="md:col-span-4 rounded-2xl overflow-hidden min-h-[220px]">
+          <img
+            src={heatImg}
+            alt="Heizungstechnik Detail"
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div className="md:col-span-8 bg-ink text-paper rounded-[2rem] p-7 md:p-10 flex flex-col justify-between">
+          <div className="font-mono text-[11px] uppercase tracking-widest text-paper/50">Qualitätsindex</div>
+          <div className="mt-3 flex items-baseline gap-3 flex-wrap">
+            <div className="font-display text-5xl md:text-6xl tracking-tighter">9.6<span className="text-paper/40 text-2xl">/10</span></div>
+            <div className="text-paper/60 text-sm">Kundenbewertungen 2025</div>
           </div>
         </div>
       </div>
