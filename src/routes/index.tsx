@@ -339,7 +339,7 @@ function Bento() {
           </div>
         </div>
         {/* Building / Wärmepumpe */}
-        <div className="md:col-span-4 md:row-span-2 rounded-[2rem] overflow-hidden relative group">
+        <div className="md:col-span-5 md:row-span-2 rounded-[2rem] overflow-hidden relative group">
           <img src={buildingImg} alt="Wärmepumpe an einem Wohnhaus" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={900} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
           <div className="absolute bottom-0 p-7 text-paper">
@@ -348,7 +348,7 @@ function Bento() {
           </div>
         </div>
         {/* Bottom — service stat */}
-        <div className="md:col-span-3 md:row-span-2 rounded-[2rem] bg-white border border-ink/10 p-7 flex flex-col justify-between">
+        <div className="md:col-span-7 md:row-span-2 rounded-[2rem] bg-white border border-ink/10 p-8 md:p-10 flex flex-col justify-between">
           <div className="font-mono text-[11px] uppercase tracking-widest text-ink/40">Service · Niederösterreich</div>
           <div>
             <div className="flex items-baseline gap-3">
