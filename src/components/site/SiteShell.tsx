@@ -17,10 +17,15 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 pt-5">
-        <div className="glass rounded-full flex items-center justify-between pl-6 pr-2 py-2">
-          <Link to="/" className="flex items-center gap-2.5 group" aria-label="GWT — Startseite">
-            <img src={logoUrl} alt="GWT" className="h-7 md:h-8 w-auto" />
+        <div className="relative flex items-center">
+          <Link
+            to="/"
+            className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-10 flex items-center"
+            aria-label="GWT — Startseite"
+          >
+            <img src={logoUrl} alt="GWT" className="h-14 md:h-16 w-auto drop-shadow-sm" />
           </Link>
+          <div className="glass rounded-full flex items-center justify-between pl-[88px] md:pl-[140px] pr-2 py-2 w-full">
           <nav className="hidden md:flex items-center gap-1 text-[13px]">
             {NAV.map((n) => {
               const active = path === n.to;
@@ -60,6 +65,7 @@ export function SiteHeader() {
               {open ? <X size={16} weight="bold" /> : <List size={16} weight="bold" />}
             </button>
           </div>
+        </div>
         </div>
         {open && (
           <div className="md:hidden mt-2 glass rounded-3xl p-4 flex flex-col gap-1">
