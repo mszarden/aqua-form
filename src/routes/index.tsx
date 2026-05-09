@@ -142,14 +142,14 @@ function Marquee() {
 function Manifesto() {
   return (
     <section className="mx-auto max-w-[1400px] px-5 md:px-10 mt-32 md:mt-44">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div className="rounded-[2.5rem] bg-white border border-ink/8 ink-shadow p-8 md:p-14 lg:p-20 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-3">
-          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/40">
+          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/40 reveal" style={{ ["--i" as string]: 0 }}>
             (01) Haltung
           </div>
         </div>
         <div className="md:col-span-9">
-          <p className="font-display text-3xl md:text-5xl lg:text-6xl tracking-tighter leading-[1.05] text-ink">
+          <p className="font-display text-3xl md:text-5xl lg:text-6xl tracking-tighter leading-[1.05] text-ink reveal" style={{ ["--i" as string]: 1 }}>
             Eine Leitung ist kein Detail. Sie ist
             <span className="text-surf"> die Bedingung dafür</span>, dass ein
             Gebäude funktioniert — leise, jeden Tag, jahrzehntelang.
@@ -159,9 +159,13 @@ function Manifesto() {
               ["31 J.", "im Markt seit 1991, zwei Generationen"],
               ["AT · CH", "Standorte Leobersdorf & Zürich"],
               ["1 Partner", "Planung, Bau, Wartung — aus einer Hand"],
-            ].map(([k, v]) => (
-              <div key={k} className="py-8 md:px-8 first:md:pl-0">
-                <div className="font-display text-4xl text-ink tracking-tight">{k}</div>
+            ].map(([k, v], idx) => (
+              <div
+                key={k}
+                className="py-8 md:px-8 first:md:pl-0 reveal"
+                style={{ ["--i" as string]: 6 + idx * 2 }}
+              >
+                <div className="font-display text-4xl text-surf tracking-tight">{k}</div>
                 <div className="mt-3 text-ink/60 text-sm leading-relaxed">{v}</div>
               </div>
             ))}
