@@ -142,14 +142,14 @@ function Marquee() {
 function Manifesto() {
   return (
     <section className="mx-auto max-w-[1400px] px-5 md:px-10 mt-32 md:mt-44">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <div className="rounded-[2.5rem] bg-white border border-ink/8 ink-shadow p-8 md:p-14 lg:p-20 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-3">
-          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/40">
+          <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/40 reveal" style={{ ["--i" as string]: 0 }}>
             (01) Haltung
           </div>
         </div>
         <div className="md:col-span-9">
-          <p className="font-display text-3xl md:text-5xl lg:text-6xl tracking-tighter leading-[1.05] text-ink">
+          <p className="font-display text-3xl md:text-5xl lg:text-6xl tracking-tighter leading-[1.05] text-ink reveal" style={{ ["--i" as string]: 1 }}>
             Eine Leitung ist kein Detail. Sie ist
             <span className="text-surf"> die Bedingung dafür</span>, dass ein
             Gebäude funktioniert — leise, jeden Tag, jahrzehntelang.
@@ -159,9 +159,13 @@ function Manifesto() {
               ["31 J.", "im Markt seit 1991, zwei Generationen"],
               ["AT · CH", "Standorte Leobersdorf & Zürich"],
               ["1 Partner", "Planung, Bau, Wartung — aus einer Hand"],
-            ].map(([k, v]) => (
-              <div key={k} className="py-8 md:px-8 first:md:pl-0">
-                <div className="font-display text-4xl text-ink tracking-tight">{k}</div>
+            ].map(([k, v], idx) => (
+              <div
+                key={k}
+                className="py-8 md:px-8 first:md:pl-0 reveal"
+                style={{ ["--i" as string]: 6 + idx * 2 }}
+              >
+                <div className="font-display text-4xl text-surf tracking-tight">{k}</div>
                 <div className="mt-3 text-ink/60 text-sm leading-relaxed">{v}</div>
               </div>
             ))}
@@ -244,8 +248,8 @@ function Disciplines() {
 function Numbers() {
   return (
     <section className="mx-auto max-w-[1400px] px-5 md:px-10 mt-32 md:mt-44">
-      <div className="grid md:grid-cols-12 gap-10 items-start">
-        <div className="md:col-span-5">
+      <div className="rounded-[2.5rem] bg-white border border-ink/8 ink-shadow p-8 md:p-14 grid md:grid-cols-12 gap-10 items-stretch">
+        <div className="md:col-span-4 flex flex-col">
           <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/40 mb-4">(03) Bilanz</div>
           <h2 className="font-display text-4xl md:text-5xl tracking-tighter text-ink leading-[1.05]">
             Keine runden Zahlen.<br />
@@ -255,19 +259,34 @@ function Numbers() {
             Statt geglätteter Marketingmetriken zeigen wir, was wirklich
             gemessen wurde — Stand Q1 2026.
           </p>
+          <div className="mt-8 rounded-2xl overflow-hidden aspect-[4/3] flex-1 min-h-[180px]">
+            <img
+              src={heatImg}
+              alt="Heizungstechnik Detail"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
-        <div className="md:col-span-7 grid grid-cols-2 gap-px bg-ink/10 rounded-[2rem] overflow-hidden border border-ink/10">
+        <div className="md:col-span-8 grid grid-cols-2 gap-px bg-ink/10 rounded-[2rem] overflow-hidden border border-ink/10 self-start">
           {[
             ["47 281 m³", "Rohrleitung verlegt"],
             ["1 247", "Anlagen unter Wartung"],
             ["94.7 %", "Anlagen­verfügbarkeit"],
             ["3.4 h", "Ø Reaktion im Service"],
           ].map(([n, l]) => (
-            <div key={n} className="bg-paper p-7 md:p-9">
-              <div className="font-mono text-2xl md:text-3xl text-ink tracking-tight">{n}</div>
+            <div key={n} className="bg-white p-7 md:p-10">
+              <div className="font-mono text-3xl md:text-4xl text-ink tracking-tight">{n}</div>
               <div className="mt-2 text-ink/55 text-[13px]">{l}</div>
             </div>
           ))}
+          <div className="bg-ink text-paper p-7 md:p-10 col-span-2">
+            <div className="font-mono text-[11px] uppercase tracking-widest text-paper/50">Qualitätsindex</div>
+            <div className="mt-3 flex items-baseline gap-3">
+              <div className="font-display text-5xl tracking-tighter">9.6<span className="text-paper/40 text-2xl">/10</span></div>
+              <div className="text-paper/60 text-sm">Kundenbewertungen 2025</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -282,46 +301,54 @@ function Bento() {
         Was wir bauen.
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-5 auto-rows-[180px]">
-        <div className="md:col-span-4 md:row-span-2 rounded-[2rem] overflow-hidden relative group">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 auto-rows-[140px]">
+        {/* Tall hero pool — left side */}
+        <div className="md:col-span-5 md:row-span-4 rounded-[2rem] overflow-hidden relative group">
           <img src={poolImg} alt="Wasseroberfläche eines Schwimmbads" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={1500} />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-ink/10" />
           <div className="absolute bottom-0 left-0 p-8 md:p-10 text-paper">
-            <div className="font-mono text-[11px] tracking-widest opacity-70">Schwimmbad · Therme</div>
-            <h3 className="font-display text-3xl md:text-5xl mt-2 tracking-tighter">Becken, die ruhig bleiben.</h3>
+            <div className="font-mono text-[11px] tracking-widest opacity-80 drop-shadow">Schwimmbad · Therme</div>
+            <h3 className="font-display text-3xl md:text-5xl mt-2 tracking-tighter drop-shadow-md">Becken, die ruhig bleiben.</h3>
+            <p className="mt-3 text-paper/80 text-sm max-w-xs">Filtration, UV‑Entkeimung, Wärmerückgewinnung — kommerziell und privat.</p>
           </div>
         </div>
-        <div className="md:col-span-2 rounded-[2rem] bg-ink text-paper p-8 flex flex-col justify-between">
-          <div className="font-mono text-[11px] uppercase tracking-widest opacity-60">Energie · live</div>
-          <div>
-            <div className="font-mono text-4xl md:text-5xl tracking-tight">−38 %</div>
-            <div className="text-paper/60 text-sm mt-2">Verbrauch nach hydraulischem Abgleich, Referenzobjekt Mödling.</div>
+        {/* Top right metric */}
+        <div className="md:col-span-4 md:row-span-2 rounded-[2rem] bg-ink text-paper p-8 flex flex-col justify-between relative overflow-hidden">
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-surf/30 blur-3xl" />
+          <div className="font-mono text-[11px] uppercase tracking-widest opacity-60 relative">Energie · live</div>
+          <div className="relative">
+            <div className="font-mono text-5xl md:text-6xl tracking-tight">−38 %</div>
+            <div className="text-paper/60 text-sm mt-2 max-w-xs">Verbrauch nach hydraulischem Abgleich, Referenzobjekt Mödling.</div>
           </div>
         </div>
-        <div className="md:col-span-2 rounded-[2rem] bg-mist text-ink p-8 flex flex-col justify-between">
+        {/* Top right small — material */}
+        <div className="md:col-span-3 md:row-span-2 rounded-[2rem] bg-mist text-ink p-7 flex flex-col justify-between">
           <div className="font-mono text-[11px] uppercase tracking-widest text-ink/50">Material</div>
           <div>
-            <div className="font-display text-3xl tracking-tight">Edelstahl & Messing.</div>
-            <div className="text-ink/60 text-sm mt-2">Pressverbindungen, kein Lötzinn — sauber im Trinkwassernetz.</div>
+            <div className="font-display text-2xl tracking-tight">Edelstahl & Messing.</div>
+            <div className="text-ink/60 text-xs mt-2">Pressverbindungen — sauber im Trinkwassernetz.</div>
           </div>
         </div>
-        <div className="md:col-span-4 rounded-[2rem] overflow-hidden relative group">
+        {/* Heating photo — middle right */}
+        <div className="md:col-span-7 md:row-span-2 rounded-[2rem] overflow-hidden relative group">
           <img src={heatImg} alt="Heizungs-Steuerung mit Kupferleitungen" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={900} />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/30 to-transparent" />
           <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end text-paper">
-            <div className="font-mono text-[11px] tracking-widest opacity-70">Heizung · Service</div>
-            <h3 className="font-display text-3xl md:text-4xl mt-2 tracking-tighter max-w-md">Wärme, die bleibt — auch im Februar.</h3>
+            <div className="font-mono text-[11px] tracking-widest opacity-80 drop-shadow">Heizung · Service</div>
+            <h3 className="font-display text-3xl md:text-4xl mt-2 tracking-tighter max-w-md drop-shadow-md">Wärme, die bleibt — auch im Februar.</h3>
           </div>
         </div>
-        <div className="md:col-span-3 rounded-[2rem] overflow-hidden relative group">
+        {/* Building / Wärmepumpe */}
+        <div className="md:col-span-5 md:row-span-2 rounded-[2rem] overflow-hidden relative group">
           <img src={buildingImg} alt="Wärmepumpe an einem Wohnhaus" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={900} />
-          <div className="absolute inset-0 bg-gradient-to-t from-paper/90 via-transparent to-transparent" />
-          <div className="absolute bottom-0 p-8 text-ink">
-            <div className="font-mono text-[11px] tracking-widest opacity-60">Energiekonzepte</div>
-            <h3 className="font-display text-2xl md:text-3xl mt-2 tracking-tight max-w-xs">Wärmepumpen für den Bestand.</h3>
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
+          <div className="absolute bottom-0 p-7 text-paper">
+            <div className="font-mono text-[11px] tracking-widest opacity-80 drop-shadow">Energiekonzepte</div>
+            <h3 className="font-display text-2xl md:text-3xl mt-2 tracking-tight max-w-xs drop-shadow-md">Wärmepumpen für den Bestand.</h3>
           </div>
         </div>
-        <div className="md:col-span-3 rounded-[2rem] bg-paper border border-ink/10 p-8 flex flex-col justify-between">
+        {/* Bottom — service stat */}
+        <div className="md:col-span-7 md:row-span-2 rounded-[2rem] bg-white border border-ink/10 p-8 md:p-10 flex flex-col justify-between">
           <div className="font-mono text-[11px] uppercase tracking-widest text-ink/40">Service · Niederösterreich</div>
           <div>
             <div className="flex items-baseline gap-3">

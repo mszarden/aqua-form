@@ -28,11 +28,16 @@ export function SiteHeader() {
                 <Link
                   key={n.to}
                   to={n.to}
-                  className={`px-3.5 py-2 rounded-full transition-colors ${
-                    active ? "bg-ink text-paper" : "text-ink/70 hover:text-ink hover:bg-ink/5"
+                  className={`relative px-3.5 py-2 transition-colors ${
+                    active ? "text-ink" : "text-ink/65 hover:text-ink"
                   }`}
                 >
                   {n.label}
+                  <span
+                    className={`pointer-events-none absolute left-3.5 right-3.5 -bottom-0.5 h-[2px] bg-ink rounded-full origin-left transition-transform duration-300 ${
+                      active ? "scale-x-100" : "scale-x-0"
+                    }`}
+                  />
                 </Link>
               );
             })}
@@ -77,40 +82,40 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-32 border-t border-ink/10">
+    <footer className="mt-32 bg-noir text-paper">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-5">
-          <img src={logoUrl} alt="GWT" className="h-10 w-auto mb-6" />
-          <div className="font-display text-3xl tracking-tighter text-ink leading-none">
+          <img src={logoUrl} alt="GWT" className="h-10 w-auto mb-6 brightness-0 invert" />
+          <div className="font-display text-3xl tracking-tighter leading-none">
             Wasser braucht<br />
-            <span className="text-surf italic">Handwerk.</span>
+            <span className="text-mist italic">Handwerk.</span>
           </div>
-          <p className="mt-6 text-ink/60 text-sm max-w-sm leading-relaxed">
+          <p className="mt-6 text-paper/60 text-sm max-w-sm leading-relaxed">
             GWT Holding GmbH plant, errichtet und wartet wassertechnische
             Systeme — von der Privatdusche bis zum Fernwärmenetz.
           </p>
         </div>
         <div className="md:col-span-3 text-sm">
-          <div className="text-ink/40 uppercase text-[11px] tracking-[0.18em] mb-4">Standort</div>
-          <div className="text-ink/80 leading-relaxed">
+          <div className="text-paper/40 uppercase text-[11px] tracking-[0.18em] mb-4">Standort</div>
+          <div className="text-paper/80 leading-relaxed">
             Hirtenberger Straße 1<br />
             2544 Leobersdorf<br />
             Niederösterreich, AT
           </div>
         </div>
         <div className="md:col-span-2 text-sm">
-          <div className="text-ink/40 uppercase text-[11px] tracking-[0.18em] mb-4">Kontakt</div>
-          <a href="mailto:office@gwt.at" className="text-ink hover:text-surf transition">office@gwt.at</a>
-          <div className="text-ink/60 mt-1 font-mono text-[12px]">UID‑geprüft · ISO 9001</div>
+          <div className="text-paper/40 uppercase text-[11px] tracking-[0.18em] mb-4">Kontakt</div>
+          <a href="mailto:office@gwt.at" className="text-paper hover:text-mist transition">office@gwt.at</a>
+          <div className="text-paper/55 mt-1 font-mono text-[12px]">UID‑geprüft · ISO 9001</div>
         </div>
         <div className="md:col-span-2 text-sm">
-          <div className="text-ink/40 uppercase text-[11px] tracking-[0.18em] mb-4">Folgen</div>
-          <a href="https://linkedin.com/company/gwt-group-at" className="text-ink hover:text-surf transition">LinkedIn</a>
-          <Link to="/kontakt" className="block mt-1 text-ink/60 hover:text-ink">Datenschutz</Link>
+          <div className="text-paper/40 uppercase text-[11px] tracking-[0.18em] mb-4">Folgen</div>
+          <a href="https://linkedin.com/company/gwt-group-at" className="text-paper hover:text-mist transition">LinkedIn</a>
+          <Link to="/kontakt" className="block mt-1 text-paper/60 hover:text-paper">Datenschutz</Link>
         </div>
       </div>
-      <div className="border-t border-ink/10">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-5 flex items-center justify-between font-mono text-[11px] text-ink/50">
+      <div className="border-t border-paper/10">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-5 flex items-center justify-between font-mono text-[11px] text-paper/45">
           <span>© {new Date().getFullYear()} GWT Holding GmbH</span>
           <span>AT · CH — 47.823 m³ verlegt</span>
         </div>
