@@ -156,3 +156,23 @@
     box-shadow: 0 30px 60px -32px color-mix(in oklab, var(--ink) 40%, transparent);
   }
 }
+
+@layer utilities {
+  /* Mobile / touch fallbacks: hover doesn't exist on touch devices,
+     so we trigger the same visual effects on tap (active) and add a
+     subtle continuous breathing zoom so photos feel alive. */
+  @media (hover: none) {
+    .group:active .group-hover\:scale-105 { transform: scale(1.05); }
+    .group .group-hover\:scale-105 {
+      animation: kenburns 14s ease-in-out infinite alternate;
+    }
+    .group:active .group-hover\:translate-x-1 { transform: translateX(0.25rem); }
+    .group:active .group-hover\:rotate-45 { transform: rotate(45deg); }
+    .story-link:active::after,
+    .group:active .group-hover\:scale-x-100 { transform: scaleX(1); }
+  }
+  @keyframes kenburns {
+    from { transform: scale(1); }
+    to   { transform: scale(1.06); }
+  }
+}
