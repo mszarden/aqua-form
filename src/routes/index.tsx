@@ -141,8 +141,8 @@ function Marquee() {
 
 function Manifesto() {
   return (
-    <section className="mx-auto max-w-[1400px] px-5 md:px-10 mt-32 md:mt-44">
-      <div className="rounded-[2.5rem] bg-white border border-ink/8 ink-shadow p-8 md:p-14 lg:p-20 grid grid-cols-1 md:grid-cols-12 gap-10">
+    <section className="w-full bg-white mt-32 md:mt-44">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 md:py-24 lg:py-28 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-3">
           <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/40 reveal" style={{ ["--i" as string]: 0 }}>
             (01) Haltung
@@ -247,8 +247,8 @@ function Disciplines() {
 
 function Numbers() {
   return (
-    <section className="mx-auto max-w-[1400px] px-5 md:px-10 mt-32 md:mt-44">
-      <div className="rounded-[2.5rem] bg-white border border-ink/8 ink-shadow p-8 md:p-14 grid md:grid-cols-12 gap-10">
+    <section className="w-full bg-white mt-32 md:mt-44">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 md:py-24 grid md:grid-cols-12 gap-10">
         {/* Row 1: intro + stats */}
         <div className="md:col-span-4">
           <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/40 mb-4">(03) Bilanz</div>
