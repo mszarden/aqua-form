@@ -2,6 +2,7 @@ import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { ArrowUpRight, List, X } from "@phosphor-icons/react";
 import { useState } from "react";
 import logoUrl from "@/assets/gwt-logo.png";
+import { GwtLogoMark } from "./GwtLogoMark";
 
 const NAV = [
   { to: "/", label: "Übersicht" },
@@ -85,7 +86,7 @@ export function SiteFooter() {
     <footer className="mt-32 bg-noir text-paper">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-5">
-          <img src={logoUrl} alt="GWT" className="h-14 w-auto mb-6 drop-shadow-sm" />
+          <GwtLogoMark className="h-14 w-auto mb-6 text-mist" />
           <div className="font-display text-3xl tracking-tighter leading-none">
             Wasser braucht<br />
             <span className="text-mist italic">Handwerk.</span>
