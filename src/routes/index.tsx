@@ -229,9 +229,10 @@ function Disciplines() {
         {SERVICES.map((s, i) => {
           const Icon = s.icon;
           return (
-            <article
+            <Link
               key={s.title}
-              className="group bg-paper p-8 md:p-12 flex flex-col gap-6 min-h-[280px] hover:bg-mist/40 transition-colors"
+              to="/leistungen"
+              className="group bg-paper p-8 md:p-12 flex flex-col gap-6 min-h-[280px] hover:bg-mist/40 active:bg-mist/60 transition-colors"
             >
               <div className="flex items-center justify-between">
                 <Icon size={28} weight="duotone" className="text-ink" />
@@ -243,12 +244,12 @@ function Disciplines() {
                 <div className="mt-6 inline-flex items-center gap-2 text-ink text-sm">
                   <span className="relative">
                     Mehr erfahren
-                    <span className="absolute left-0 -bottom-0.5 h-px w-full bg-ink scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
+                    <span className="absolute left-0 -bottom-0.5 h-px w-full bg-ink scale-x-0 group-hover:scale-x-100 group-active:scale-x-100 origin-left transition-transform duration-300" />
                   </span>
-                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={14} className="group-hover:translate-x-1 group-active:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </article>
+            </Link>
           );
         })}
       </div>
