@@ -320,14 +320,14 @@ function Bento() {
         <div className="md:col-span-5 md:row-span-4 rounded-[2rem] overflow-hidden relative group">
           <img src={poolImg} alt="Wasseroberfläche eines Schwimmbads" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={1500} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-ink/10" />
-          <div className="absolute bottom-0 left-0 p-8 md:p-10 text-paper">
+          <div className="absolute inset-0 p-8 md:p-10 text-paper flex flex-col justify-center md:justify-end">
             <div className="font-mono text-[11px] tracking-widest opacity-80 drop-shadow">Schwimmbad · Therme</div>
             <h3 className="font-display text-3xl md:text-5xl mt-2 tracking-tighter drop-shadow-md">Becken, die ruhig bleiben.</h3>
             <p className="mt-3 text-paper/80 text-sm max-w-xs">Filtration, UV‑Entkeimung, Wärmerückgewinnung — kommerziell und privat.</p>
           </div>
         </div>
         {/* Top right metric */}
-        <div className="md:col-span-4 md:row-span-2 rounded-[2rem] bg-ink text-paper p-8 flex flex-col justify-between relative overflow-hidden">
+        <div className="md:col-span-4 md:row-span-2 rounded-[2rem] bg-ink text-paper p-8 flex flex-col gap-6 justify-center md:justify-between relative overflow-hidden">
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-surf/30 blur-3xl" />
           <div className="font-mono text-[11px] uppercase tracking-widest opacity-60 relative">Energie · live</div>
           <div className="relative">
@@ -336,7 +336,7 @@ function Bento() {
           </div>
         </div>
         {/* Top right small — material */}
-        <div className="md:col-span-3 md:row-span-2 rounded-[2rem] bg-mist text-ink p-7 flex flex-col justify-between">
+        <div className="md:col-span-3 md:row-span-2 rounded-[2rem] bg-mist text-ink p-7 flex flex-col gap-6 justify-center md:justify-between">
           <div className="font-mono text-[11px] uppercase tracking-widest text-ink/50">Material</div>
           <div>
             <div className="font-display text-2xl tracking-tight">Edelstahl & Messing.</div>
@@ -347,7 +347,7 @@ function Bento() {
         <div className="md:col-span-7 md:row-span-2 rounded-[2rem] overflow-hidden relative group">
           <img src={heatImg} alt="Heizungs-Steuerung mit Kupferleitungen" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={900} />
           <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/30 to-transparent" />
-          <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end text-paper">
+          <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-center md:justify-end text-paper">
             <div className="font-mono text-[11px] tracking-widest opacity-80 drop-shadow">Heizung · Service</div>
             <h3 className="font-display text-3xl md:text-4xl mt-2 tracking-tighter max-w-md drop-shadow-md">Wärme, die bleibt — auch im Februar.</h3>
           </div>
@@ -356,13 +356,13 @@ function Bento() {
         <div className="md:col-span-5 md:row-span-2 rounded-[2rem] overflow-hidden relative group">
           <img src={buildingImg} alt="Wärmepumpe an einem Wohnhaus" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={900} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
-          <div className="absolute bottom-0 p-7 text-paper">
+          <div className="absolute inset-0 p-7 text-paper flex flex-col justify-center md:justify-end">
             <div className="font-mono text-[11px] tracking-widest opacity-80 drop-shadow">Energiekonzepte</div>
             <h3 className="font-display text-2xl md:text-3xl mt-2 tracking-tight max-w-xs drop-shadow-md">Wärmepumpen für den Bestand.</h3>
           </div>
         </div>
         {/* Bottom — service stat */}
-        <div className="md:col-span-7 md:row-span-2 rounded-[2rem] bg-white border border-ink/10 p-8 md:p-10 flex flex-col justify-between">
+        <div className="md:col-span-7 md:row-span-2 rounded-[2rem] bg-white border border-ink/10 p-8 md:p-10 flex flex-col gap-6 justify-center md:justify-between">
           <div className="font-mono text-[11px] uppercase tracking-widest text-ink/40">Service · Niederösterreich</div>
           <div>
             <div className="flex items-baseline gap-3">
