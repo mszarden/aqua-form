@@ -331,8 +331,8 @@ function Bento() {
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-surf/30 blur-3xl" />
           <div className="font-mono text-[11px] uppercase tracking-widest opacity-60 relative">Energie · live</div>
           <div className="relative">
-            <div className="font-mono text-5xl md:text-6xl tracking-tight">−38 %</div>
-            <div className="text-paper/60 text-sm mt-2 max-w-xs">Verbrauch nach hydraulischem Abgleich, Referenzobjekt Mödling.</div>
+            <div className="font-mono text-5xl md:text-4xl lg:text-6xl tracking-tight">−38 %</div>
+            <div className="text-paper/60 text-xs md:text-[11px] lg:text-sm mt-2 max-w-xs leading-snug">Verbrauch nach hydraulischem Abgleich, Referenzobjekt Mödling.</div>
           </div>
         </div>
         {/* Top right small — material */}
