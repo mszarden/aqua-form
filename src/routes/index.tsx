@@ -315,9 +315,9 @@ function Bento() {
         Was wir bauen.
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 auto-rows-[140px]">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:auto-rows-[140px]">
         {/* Tall hero pool — left side */}
-        <div className="md:col-span-5 md:row-span-4 rounded-[2rem] overflow-hidden relative group">
+        <div className="md:col-span-5 md:row-span-4 rounded-[2rem] overflow-hidden relative group min-h-[360px]">
           <img src={poolImg} alt="Wasseroberfläche eines Schwimmbads" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={1500} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-ink/10" />
           <div className="absolute inset-0 p-8 md:p-10 text-paper flex flex-col justify-center md:justify-end">
@@ -327,7 +327,7 @@ function Bento() {
           </div>
         </div>
         {/* Top right metric */}
-        <div className="md:col-span-4 md:row-span-2 rounded-[2rem] bg-ink text-paper p-8 flex flex-col gap-6 justify-center md:justify-between relative overflow-hidden">
+        <div className="md:col-span-4 md:row-span-2 rounded-[2rem] bg-ink text-paper p-8 md:p-10 flex flex-col gap-6 justify-center md:justify-between relative overflow-hidden min-h-[220px]">
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-surf/30 blur-3xl" />
           <div className="font-mono text-[11px] uppercase tracking-widest opacity-60 relative">Energie · live</div>
           <div className="relative">
@@ -336,7 +336,7 @@ function Bento() {
           </div>
         </div>
         {/* Top right small — material */}
-        <div className="md:col-span-3 md:row-span-2 rounded-[2rem] bg-mist text-ink p-7 flex flex-col gap-6 justify-center md:justify-between">
+        <div className="md:col-span-3 md:row-span-2 rounded-[2rem] bg-mist text-ink p-8 md:p-7 flex flex-col gap-6 justify-center md:justify-between min-h-[220px]">
           <div className="font-mono text-[11px] uppercase tracking-widest text-ink/50">Material</div>
           <div>
             <div className="font-display text-2xl tracking-tight">Edelstahl & Messing.</div>
@@ -344,7 +344,7 @@ function Bento() {
           </div>
         </div>
         {/* Heating photo — middle right */}
-        <div className="md:col-span-7 md:row-span-2 rounded-[2rem] overflow-hidden relative group">
+        <div className="md:col-span-7 md:row-span-2 rounded-[2rem] overflow-hidden relative group min-h-[260px]">
           <img src={heatImg} alt="Heizungs-Steuerung mit Kupferleitungen" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={900} />
           <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/30 to-transparent" />
           <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-center md:justify-end text-paper">
@@ -353,7 +353,7 @@ function Bento() {
           </div>
         </div>
         {/* Building / Wärmepumpe */}
-        <div className="md:col-span-5 md:row-span-2 rounded-[2rem] overflow-hidden relative group">
+        <div className="md:col-span-5 md:row-span-2 rounded-[2rem] overflow-hidden relative group min-h-[260px]">
           <img src={buildingImg} alt="Wärmepumpe an einem Wohnhaus" className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width={1200} height={900} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent" />
           <div className="absolute inset-0 p-7 text-paper flex flex-col justify-center md:justify-end">
@@ -362,7 +362,7 @@ function Bento() {
           </div>
         </div>
         {/* Bottom — service stat */}
-        <div className="md:col-span-7 md:row-span-2 rounded-[2rem] bg-white border border-ink/10 p-8 md:p-10 flex flex-col gap-6 justify-center md:justify-between">
+        <div className="md:col-span-7 md:row-span-2 rounded-[2rem] bg-white border border-ink/10 p-8 md:p-10 flex flex-col gap-6 justify-center md:justify-between min-h-[220px]">
           <div className="font-mono text-[11px] uppercase tracking-widest text-ink/40">Service · Niederösterreich</div>
           <div>
             <div className="flex items-baseline gap-3">
