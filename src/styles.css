@@ -109,6 +109,9 @@
   }
 
   .marquee { animation: marquee 40s linear infinite; }
+  @media (max-width: 767px) {
+    .marquee { animation-duration: 18s; }
+  }
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
